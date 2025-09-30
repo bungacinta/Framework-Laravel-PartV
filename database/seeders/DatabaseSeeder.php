@@ -2,22 +2,31 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Penerbit;
 
-class DatabaseSeeder extends Seeder
+class PenerbitTableSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
-     */
+    * Run the database seeds.
+    */
     public function run(): void
-    {
-        // User::factory(10)->create();
+{
+        $Penerbit1 = new Penerbit;
+        $Penerbit1->penerbit = "Graha Ilmu";
+        $Penerbit1->alamat = "Candi Gebang Permai Blok R-6
+Yogyakarta";
+        $Penerbit1->save();
+        $Penerbit2 = new Penerbit;
+        $Penerbit2->penerbit = "Andi";
+        $Penerbit2->alamat = "JL Beo 38-40 Yogyakarta";
+        $Penerbit2->save();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        $Penerbit3 = new Penerbit;
+        $Penerbit3->penerbit = "Lokomedia";
+        $Penerbit3->alamat = "JL. Jambon, Perum. Persona Alam Hijau
+Kav 2. B-4, Kricak Yogyakarta";
+        $Penerbit3->save();
     }
 }
