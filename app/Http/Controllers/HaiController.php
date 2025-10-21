@@ -4,14 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class KategoriBukuController extends Controller
+class haiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('kategori-buku.buku');
+        $buku = [
+            'HTML 5',
+            'Trip dan Trik Pemrograman PHP 7',
+            'Belajar Cepat Javascript',
+            'Membangun Web dengan PHP dan MySQL'
+        ];
+        $collection = collect($buku)->map(function ($judul) {
+            return strtoupper($judul);
+        });
+        return response()->json($collection);
     }
 
     /**
@@ -19,7 +28,7 @@ class KategoriBukuController extends Controller
      */
     public function create()
     {
-        return view('kategori-buku.tambah');
+        //
     }
 
     /**
@@ -27,8 +36,7 @@ class KategoriBukuController extends Controller
      */
     public function store(Request $request)
     {
-        $kategori_buku = $request->kategori_buku;
-        return $kategori_buku;
+        //
     }
 
     /**
